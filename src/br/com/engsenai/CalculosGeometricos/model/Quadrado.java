@@ -14,38 +14,31 @@ package br.com.engsenai.CalculosGeometricos.model;
 
 		}
 
-		public void calcularPerimetro() {
+		private double calcularPerimetro() {
 
 		perimetro = (lado * 4);
+		return perimetro;
 
 		}
 
-		public void calcularArea() {
+		private double calcularArea() {
 
 		area=(lado*lado);
+		return area;
 		}
 
 	public void mostrarDados() {
 
 		System.out.println("--------------");
-
 		System.out.println("Forma geométrica: Quadrado");
-
 		System.out.println("--------------");
-
 		System.out.println("MEDIDAS");
-
 		System.out.println("lado: "+lado);
-
 		System.out.println("--------------");
+		System.out.println("Área: " + calcularArea());
+		System.out.println("Perímetro: " + calcularPerimetro());
 
-		System.out.println("RESOLUÇÕES OBTIDAS");
-
-		System.out.println("Área: "+ area);
-
-		System.out.println("Perimetro:" + perimetro);
-
-		System.out.println("--------------");
+		System.out.println("======================");
 		
 	}
 

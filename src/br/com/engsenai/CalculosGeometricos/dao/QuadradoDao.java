@@ -3,6 +3,7 @@ package br.com.engsenai.CalculosGeometricos.dao;
 import java.util.Scanner;
 
 import br.com.engsenai.CalculosGeometricos.model.Quadrado;
+import br.com.engsenai.CalculosGeometricos.ui.Menu;
 
 public class QuadradoDao {
 	
@@ -21,9 +22,9 @@ public class QuadradoDao {
 		
 		quadrado.mostrarDados();
 		
-		//Fechar o objeto scanner, remover da memória
-		leitor.close();
-		
+		Menu.continuar(leitor, "Breno");
+			
 		 }
-
 	}
+		
+		

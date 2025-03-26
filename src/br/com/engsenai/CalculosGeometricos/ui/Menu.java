@@ -3,6 +3,7 @@ package br.com.engsenai.CalculosGeometricos.ui;
 import java.util.Scanner;
 
 import br.com.engsenai.CalculosGeometricos.dao.QuadradoDao;
+import br.com.engsenai.CalculosGeometricos.dao.RetanguloDao;
 import br.com.engsenai.CalculosGeometricos.model.Quadrado;
 
 public class Menu {
@@ -24,12 +25,36 @@ public class Menu {
 		
 		if (opcao==1) {
 			QuadradoDao.criarQuadrado();
-		} else if(opcao ==2){
+			
+		}else if (opcao==2) {
+			RetanguloDao.criarRetangulo();
+			
+		}
+		
+		else if(opcao ==3){
 		}else {
 			System.out.println("Essa opção ainda não foi implementada");
 		}
 		
+		leitor.close();
+	}
 		
+		public static void continuar(Scanner leitor, String nome) {
+			String resposta ="";
+			
+			//se for verdadeiro é falso
+			while (!resposta.equals("C")|| !resposta.equals("S")) {
+				System.out.print(nome +" você, deseja efetuar outro Cálculo (C ou S)/?");
+			   resposta = leitor.next();
+				
+				
+			}
+			
+			if(resposta.equalsIgnoreCase("s")) {
+			Menu.mostrarMenu();
+			}
+				
+
 		
 
 
