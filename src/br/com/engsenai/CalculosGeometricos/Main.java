@@ -19,7 +19,7 @@ public class Main {
 		
 
 	Menu.mostrarMenu();
-	System.out.println("Encerrando programa");
+	System.out.println("Desligando calculadora");
 			
 	}	
 	public static void escrever(String nome) {

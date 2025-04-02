@@ -2,11 +2,17 @@ package br.com.engsenai.CalculosGeometricos.ui;
 
 import java.util.Scanner;
 
+import br.com.engsenai.CalculosGeometricos.dao.CirculoDao;
 import br.com.engsenai.CalculosGeometricos.dao.QuadradoDao;
 import br.com.engsenai.CalculosGeometricos.dao.RetanguloDao;
+import br.com.engsenai.CalculosGeometricos.dao.TrapezioDao;
+import br.com.engsenai.CalculosGeometricos.dao.TrianguloDAO;
 import br.com.engsenai.CalculosGeometricos.model.Quadrado;
 
 public class Menu {
+	private static final Object S = null;
+	private static final Object C = null;
+
 	public  static void mostrarMenu() {
 		System.out.println("------------------------");
 		System.out.println("CACULADORA DE POLÍGNOS");
@@ -32,32 +38,54 @@ public class Menu {
 		}
 		
 		else if(opcao ==3){
-		}else {
+			CirculoDao.criarCirculo();
+		}
+		else if(opcao ==4){
+				TrapezioDao.criarTrapezio();
+		}
+		else if(opcao ==5){
+			TrianguloDAO.criarTrapezio();
+	}
+		else {
 			System.out.println("Essa opção ainda não foi implementada");
 		}
 		
 		leitor.close();
 	}
 		
-		public static void continuar(Scanner leitor, String nome) {
+	public static void continuar(Scanner leitor, String nome) {
 			String resposta ="";
 			
 			//se for verdadeiro é falso
-			while (!resposta.equals("C")|| !resposta.equals("S")) {
-				System.out.print(nome +" você, deseja efetuar outro Cálculo (C ou S)/?");
+			 while (!resposta.equalsIgnoreCase("C") && !resposta.equalsIgnoreCase("S")) {
+			        System.out.print(nome + " você deseja efetuar outro Cálculo (C ou S)? ");
+			        resposta = leitor.next();  // Lê a resposta do usuário
+			        
+			        // Se o usuário digitar "C", continua as operações
+			        if (resposta.equalsIgnoreCase("C")) {
+			            System.out.println("Continuando operações...");
+			            Menu.mostrarMenu();
+			        } 
+			        //Encerrando a calculadora
+			        else if (resposta.equalsIgnoreCase("S")) {
+			           System.out.println("Desligando"); 
+			         
+			        } 
+				
+				
+				
 			   resposta = leitor.next();
+			   
 				
 				
 			}
 			
-			if(resposta.equalsIgnoreCase("s")) {
+			//if(resposta.equalsIgnoreCase("s")) {
 			Menu.mostrarMenu();
 			}
 				
 
-		
+
+	}
 
 
-}
-
-}
